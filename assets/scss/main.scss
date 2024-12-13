@@ -1,0 +1,62 @@
+@import 'variables';
+@import 'header';
+@import 'footer';
+
+// Styles globaux
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-family: $body-font;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+// Liens
+a {
+    color: $accent-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $hover-text-color;
+    }
+}
+
+// Titres
+h1, h2, h3, h4, h5, h6 {
+    color: $text-color;
+}
+
+// Texte secondaire (par exemple, dans un pied de page ou une description)
+.text-secondary {
+    color: $text-secondary;
+}
+
+// Bordures
+hr, .border {
+    border-color: $border-color;
+    border-width: 1px;
+    border-style: solid;
+}
+
+// Boutons
+button {
+    background-color: $accent-color;
+    color: $background-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten($accent-color, 10%);
+    }
+}
+
+// Messages d'erreur
+.error {
+    color: $error-color;
+    background-color: lighten($error-color, 20%);
+    padding: 10px;
+    border-radius: 5px;
+}
