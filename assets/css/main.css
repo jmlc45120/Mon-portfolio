@@ -1,3 +1,134 @@
+@charset "UTF-8";
+header {
+  background-color: #040216;
+  color: #EAEAEA;
+  padding: 20px;
+  text-align: center;
+}
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+header nav ul a {
+  color: #EAEAEA;
+  text-decoration: none;
+}
+header nav ul a:hover {
+  color: #d7d8f7;
+}
+
+.site-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.custom-logo {
+  max-width: 150px;
+  height: auto;
+}
+
+footer {
+  background-color: #040216;
+  color: #EAEAEA;
+  text-align: center;
+  padding: 20px;
+}
+
+.technologies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem; /* Espacement entre les technologies */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+}
+.technologies .technology {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Aligner le logo avec le texte */
+  gap: 0.5rem; /* Espacement entre le logo et le texte */
+  background-color: #292929; /* Optionnel : arrière-plan sombre */
+  border-radius: 4px;
+  padding: 0.5rem; /* Optionnel : espace interne */
+  color: #fff;
+}
+.technologies .technology img.tech-logo {
+  width: 32px; /* Taille du logo PNG */
+  height: auto;
+}
+.technologies .technology span {
+  font-size: 0.9rem;
+}
+
 body {
-  background-color: back;
+  background-color: #040216;
+  color: #EAEAEA;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: #d7d8f7;
+  text-decoration: none;
+  font-family: "montserrat", sans-serif;
+}
+a:hover {
+  color: #FFFFFF;
+}
+
+p {
+  color: #d7d8f7;
+  text-decoration: none;
+  font-family: "lato", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "montserrat", sans-serif;
+  color: #EAEAEA;
+}
+
+.text-secondary {
+  color: #B3B3B3;
+}
+
+hr, .border {
+  border-color: #272727;
+  border-width: 1px;
+  border-style: solid;
+}
+
+button {
+  background-color: #d7d8f7;
+  color: #040216;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: white;
+}
+
+.error {
+  color: #CF6679;
+  background-color: #e7b4bd;
+  padding: 10px;
+  border-radius: 5px;
 }/*# sourceMappingURL=main.css.map */

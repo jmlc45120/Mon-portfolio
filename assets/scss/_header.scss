@@ -24,3 +24,14 @@ header {
         }
     }
 }
+.site-header {
+    display:flex;
+    justify-content: space-between;
+    margin:0 100px;
+    align-items: center;
+
+}
+.custom-logo {
+    max-width: 150px;
+    height: auto;
+}

@@ -1,0 +1,24 @@
+.technologies {
+    display: flex;
+    gap: 1rem; /* Espacement entre les technologies */
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+
+    .technology {
+        display: flex;
+        align-items: center; /* Aligner le logo avec le texte */
+        gap: 0.5rem; /* Espacement entre le logo et le texte */
+        background-color: #292929; /* Optionnel : arrière-plan sombre */
+        border-radius: 4px;
+        padding: 0.5rem; /* Optionnel : espace interne */
+        color: #fff;
+
+        img.tech-logo {
+            width: 32px; /* Taille du logo PNG */
+            height: auto;
+        }
+
+        span {
+            font-size: 0.9rem;
+        }
+    }
+}
