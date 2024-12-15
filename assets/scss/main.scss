@@ -2,6 +2,7 @@
 @import 'header';
 @import 'footer';
 @import 'page-réalisations';
+@import 'modale';
 
 // Styles globaux
 body {
@@ -45,20 +46,6 @@ hr, .border {
     border-color: $border-color;
     border-width: 1px;
     border-style: solid;
-}
-
-// Boutons
-button {
-    background-color: $accent-color;
-    color: $background-color;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-        background-color: lighten($accent-color, 10%);
-    }
 }
 
 // Messages d'erreur

@@ -47,33 +47,237 @@ footer {
   padding: 20px;
 }
 
-.technologies {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem; /* Espacement entre les technologies */
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+.projects-page {
+  padding: 2rem;
 }
-.technologies .technology {
+.projects-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.projects-page .projects-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem; /* Espacement entre les projets */
+}
+.projects-page .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Aligner l'image et les détails horizontalement */
+  gap: 5rem; /* Espacement entre l'image et les détails */
+  border: 1px solid #333; /* Bordure pour le conteneur */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 1rem; /* Espacement interne */
+  background-color: #05032c; /* Fond sombre */
+  color: #e0e0e0; /* Texte clair */
+}
+.projects-page .project-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5rem;
+}
+.projects-page .project .project-image img {
+  width: 500px; /* Largeur fixe pour l'image */
+  height: auto; /* Conserver les proportions */
+  border-radius: 8px; /* Coins arrondis */
+}
+.projects-page .project .project-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; /* Empiler les éléments verticalement */
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; /* Occuper tout l'espace disponible à droite */
+  gap: 1rem; /* Espacement entre la description et les technologies */
+}
+.projects-page .project .project-details .project-description {
+  font-size: 1rem; /* Taille de police normale */
+  line-height: 1.5; /* Interligne agréable pour la lecture */
+}
+.projects-page .project .project-details .technologies {
+  /* Liste des technologies */
+}
+.projects-page .project .project-details .technologies h3 {
+  font-size: 1.2rem; /* Taille du titre des technologies */
+  margin-bottom: 0.5rem; /* Espacement sous le titre */
+}
+.projects-page .project .project-details .technologies .technology-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Aligner les technologies horizontalement */
+  gap: 1rem; /* Espacement entre les logos */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; /* Retour à la ligne si nécessaire */
+}
+.projects-page .project .project-details .technologies .technology-list .technology {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Aligner logo et texte */
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; /* Aligner le logo avec le texte */
+          align-items: center;
   gap: 0.5rem; /* Espacement entre le logo et le texte */
-  background-color: #292929; /* Optionnel : arrière-plan sombre */
-  border-radius: 4px;
-  padding: 0.5rem; /* Optionnel : espace interne */
-  color: #fff;
+  background-color: #292929; /* Fond sombre pour chaque technologie */
+  border-radius: 4px; /* Coins arrondis */
+  padding: 0.5rem; /* Espacement interne */
+  color: #fff; /* Couleur du texte */
 }
-.technologies .technology img.tech-logo {
-  width: 32px; /* Taille du logo PNG */
-  height: auto;
+.projects-page .project .project-details .technologies .technology-list .technology img.tech-logo {
+  width: 32px; /* Taille du logo */
+  height: auto; /* Conserver les proportions */
 }
-.technologies .technology span {
-  font-size: 0.9rem;
+.projects-page .project .project-details .technologies .technology-list .technology span {
+  font-size: 0.9rem; /* Taille de la police */
+}
+
+.project-title {
+  width: 100px;
+}
+
+.modal-overlay {
+  display: none; /* La modale est cachée par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Arrière-plan semi-transparent */
+  z-index: 9999;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Centre la modale verticalement */
+}
+.modal-overlay.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Affiche la modale */
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px); /* Flou de 3px */
+}
+
+/* Contenu de la modale */
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; /* Colonne pour aligner les champs */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Centre horizontalement les champs */
+  background: #09034b;
+  border: 2px solid #ffffff; /* Contour blanc */
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  font-size: 20px;
+  text-align: left;
+  position: relative;
+  /* Parent des champs du formulaire */
+  /* Messages d'erreur */
+  /* Champs du formulaire */
+  /* Centrer le bouton Envoyer */
+  /* Bouton Envoyer */
+}
+.modal-content .wpcf7-form-control-wrap {
+  position: relative; /* Nécessaire pour positionner les erreurs */
+  margin-bottom: 2rem; /* Réserve un espace fixe sous chaque champ */
+  min-height: 3rem; /* Assure un espace pour les erreurs */
+}
+.modal-content .wpcf7-not-valid-tip {
+  position: absolute; /* Positionne les messages sous les champs */
+  top: 100%; /* Juste en dessous des champs */
+  left: 0;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 14px;
+  color: #ff4d4d; /* Couleur rouge */
+  opacity: 0; /* Masque par défaut */
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.modal-content .wpcf7-not-valid-tip:not(:empty) {
+  opacity: 1; /* Affiche les erreurs générées */
+}
+.modal-content .wpcf7-form-control {
+  width: 100%; /* Les champs occupent toute la largeur de la modale */
+  max-width: 350px; /* Limite maximale de largeur */
+  padding: 0.5rem; /* Espacement interne */
+  border: none; /* Supprime les bordures par défaut */
+  border-radius: 4px; /* Coins arrondis */
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* Assure une gestion cohérente des dimensions */
+}
+.modal-content .wpcf7-textarea {
+  resize: none; /* Désactive le redimensionnement */
+  height: 120px; /* Hauteur spécifique pour le textarea */
+}
+.modal-content .wpcf7-form p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Active Flexbox */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; /* Centre horizontalement */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Centre verticalement */
+  gap: 0.5rem; /* Espacement entre le bouton et autres éléments */
+}
+.modal-content .wpcf7-submit {
+  font-size: 18px;
+  height: 50px;
+  width: 200px;
+  margin: 0;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  color: #09034b;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.modal-content .wpcf7-submit:hover {
+  background-color: #f0f0f0;
+  color: #000000;
+  border-color: #09034b;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+/* Bouton pour fermer la modale */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 body {
@@ -112,18 +316,6 @@ hr, .border {
   border-color: #272727;
   border-width: 1px;
   border-style: solid;
-}
-
-button {
-  background-color: #d7d8f7;
-  color: #040216;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: white;
 }
 
 .error {

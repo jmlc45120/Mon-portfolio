@@ -1,24 +1,86 @@
-.technologies {
-    display: flex;
-    gap: 1rem; /* Espacement entre les technologies */
-    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+.projects-page {
+    padding: 2rem;
 
-    .technology {
+    h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .projects-list {
         display: flex;
-        align-items: center; /* Aligner le logo avec le texte */
-        gap: 0.5rem; /* Espacement entre le logo et le texte */
-        background-color: #292929; /* Optionnel : arrière-plan sombre */
-        border-radius: 4px;
-        padding: 0.5rem; /* Optionnel : espace interne */
-        color: #fff;
+        flex-direction: column;
+        gap: 2rem; /* Espacement entre les projets */
+    }
 
-        img.tech-logo {
-            width: 32px; /* Taille du logo PNG */
-            height: auto;
+    .project {
+        display: flex; /* Aligner l'image et les détails horizontalement */
+        gap: 5rem; /* Espacement entre l'image et les détails */
+        border: 1px solid #333; /* Bordure pour le conteneur */
+        border-radius: 8px; /* Coins arrondis */
+        padding: 1rem; /* Espacement interne */
+        background-color: #05032c; /* Fond sombre */
+        color: #e0e0e0; /* Texte clair */
+
+        &-content{
+            display:flex;
+            gap: 5rem;
         }
 
-        span {
-            font-size: 0.9rem;
+        .project-image {
+            img {
+                width: 500px; /* Largeur fixe pour l'image */
+                height: auto; /* Conserver les proportions */
+                border-radius: 8px; /* Coins arrondis */
+            }
+        }
+
+        .project-details {
+            display: flex;
+            flex-direction: column; /* Empiler les éléments verticalement */
+            flex: 1; /* Occuper tout l'espace disponible à droite */
+            gap: 1rem; /* Espacement entre la description et les technologies */
+
+            .project-description {
+                font-size: 1rem; /* Taille de police normale */
+                line-height: 1.5; /* Interligne agréable pour la lecture */
+            }
+
+            .technologies {
+                h3 {
+                    font-size: 1.2rem; /* Taille du titre des technologies */
+                    margin-bottom: 0.5rem; /* Espacement sous le titre */
+                }
+
+                /* Liste des technologies */
+                .technology-list {
+                    display: flex; /* Aligner les technologies horizontalement */
+                    gap: 1rem; /* Espacement entre les logos */
+                    flex-wrap: wrap; /* Retour à la ligne si nécessaire */
+
+                    .technology {
+                        display: flex; /* Aligner logo et texte */
+                        align-items: center;
+                        gap: 0.5rem; /* Espacement entre le logo et le texte */
+                        background-color: #292929; /* Fond sombre pour chaque technologie */
+                        border-radius: 4px; /* Coins arrondis */
+                        padding: 0.5rem; /* Espacement interne */
+                        color: #fff; /* Couleur du texte */
+
+                        img.tech-logo {
+                            width: 32px; /* Taille du logo */
+                            height: auto; /* Conserver les proportions */
+                        }
+
+                        span {
+                            font-size: 0.9rem; /* Taille de la police */
+                        }
+                    }
+                }
+            }
         }
     }
+}
+.project-title{
+    width: 100px;
+
 }

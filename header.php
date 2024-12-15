@@ -20,9 +20,6 @@
         ?>
     </div>
     <nav>
-        <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
-            <span class="screen-reader-text">Toggle navigation</span>
-        </button>
         <?php
         wp_nav_menu(array(
             'theme_location' => 'main-menu',

@@ -7,57 +7,51 @@ get_header(); ?>
 
     <div class="projects-list">
         <?php
-        // Récupérer les contenus associés à la page
+        // Récupérer les projets du CPT
         $args = array(
-            'post_type' => 'page', // Type de contenu (si ce sont des pages)
-            'posts_per_page' => -1, // Tous les projets associés
+            'post_type' => 'projets', // Custom Post Type
+            'posts_per_page' => -1, // Récupère tous les projets
+            'orderby' => 'date', // Tri par date
+            'order' => 'DESC', // Du plus récent au plus ancien
         );
         $projects = new WP_Query($args);
 
         if ($projects->have_posts()):
             while ($projects->have_posts()): $projects->the_post(); ?>
                 <article class="project">
-                    <!-- Titre du projet -->
-                    <?php if (get_field('projet')): ?>
-                        <h2><?php the_field('projet'); ?></h2>
-                    <?php endif; ?>
+                    <!-- Nom du projet -->
+                    <h2 class="project-title"><?php the_title(); ?></h2>
 
-                    <!-- Description -->
-                    <?php if (get_field('description')): ?>
-                        <p><?php the_field('description'); ?></p>
-                    <?php endif; ?>
+                    <div class="project-content">
+                        <!-- Image du projet -->
+                        <?php if (get_field('visuel')): ?>
+                            <div class="project-image">
+                                <img src="<?php echo esc_url(get_field('visuel')['url']); ?>" alt="<?php the_title(); ?>">
+                            </div>
+                        <?php endif; ?>
 
-                    <!-- Technologies utilisées -->
-                    <?php if (get_field('technologies')): ?>
-                        <div class="technologies">
-                            <h3>Technologies utilisées :</h3>
-                            <ul>
-                                <?php foreach (get_field('technologies') as $tech): ?>
-                                    <li>
-                                        <?php 
-                                        // Affiche le logo PNG (optionnel) 
-                                        $logo_path = get_template_directory_uri() . '/assets/logos/' . strtolower($tech) . '.png'; 
-                                        ?>
-                                        <img src="<?php echo $logo_path; ?>" alt="<?php echo esc_attr($tech); ?>" class="tech-logo">
-                                        <?php echo esc_html($tech); ?>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
+                        <!-- Description -->
+                        <div class="project-details">
+                            <div class="project-description">
+                                <p><?php the_field('description'); ?></p>
+                            </div>
+
+                            <!-- Technologies utilisées -->
+                            <?php if (get_field('technologies')): ?>
+                                <div class="technologies">
+                                    <h3>Technologies utilisées :</h3>
+                                    <div class="technology-list">
+                                        <?php foreach (get_field('technologies') as $tech): ?>
+                                            <div class="technology">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/logos/<?php echo strtolower($tech); ?>.png" alt="<?php echo esc_attr($tech); ?>" class="tech-logo">
+                                                <span><?php echo esc_html($tech); ?></span>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                    <?php endif; ?>
-
-                    <!-- Visuel du projet -->
-                    <?php if (get_field('visuel')): ?>
-                        <?php $image = get_field('visuel'); ?>
-                        <div class="project-image">
-                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                        </div>
-                    <?php endif; ?>
-
-                    <!-- Lien vers le projet -->
-                    <?php if (get_field('lien_projet')): ?>
-                        <a href="<?php the_field('lien_projet'); ?>" target="_blank" class="project-link">Voir le projet</a>
-                    <?php endif; ?>
+                    </div>
                 </article>
             <?php endwhile;
             wp_reset_postdata();
