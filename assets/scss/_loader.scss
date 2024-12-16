@@ -1,0 +1,36 @@
+/* Loader global */
+.loader {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader.active {
+    display: flex; /* Affiche le loader lorsqu'il est actif */
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #ffffff; /* Bordure blanche */
+    border-top: 5px solid #09034b; /* Bordure supérieure colorée */
+    border-radius: 50%; /* Cercle parfait */
+    animation: spin 1s linear infinite; /* Animation de rotation */
+}
+
+/* Animation de rotation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

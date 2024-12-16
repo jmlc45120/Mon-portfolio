@@ -10,6 +10,9 @@ function mon_portfolio_enqueue_assets() {
 
     // Charger le fichier JS principal
     wp_enqueue_script('main-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0', true);
+
+    // Charger le fichier JS pour le loader global
+    wp_enqueue_script('global-loader', get_template_directory_uri() . '/assets/js/global-loader.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'mon_portfolio_enqueue_assets');
 
@@ -38,5 +41,4 @@ function mon_portfolio_setup() {
     add_editor_style('assets/css/main.css');
 }
 add_action('after_setup_theme', 'mon_portfolio_setup');
-
 ?>

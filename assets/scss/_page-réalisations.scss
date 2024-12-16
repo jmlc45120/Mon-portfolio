@@ -1,5 +1,5 @@
 .projects-page {
-    padding: 2rem;
+    padding: 7rem;
 
     h1 {
         text-align: center;
@@ -9,7 +9,8 @@
     .projects-list {
         display: flex;
         flex-direction: column;
-        gap: 2rem; /* Espacement entre les projets */
+        gap: 3rem; /* Espacement entre les projets */
+       
     }
 
     .project {
@@ -23,7 +24,10 @@
 
         &-content{
             display:flex;
-            gap: 5rem;
+            gap: 3rem;
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
         }
 
         .project-image {
@@ -78,9 +82,14 @@
                 }
             }
         }
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
     }
 }
 .project-title{
-    width: 100px;
+    align-self: center;
+    max-width: 200px;
+    flex: 1 1 100%;
 
 }

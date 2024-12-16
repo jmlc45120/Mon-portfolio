@@ -3,15 +3,35 @@
 @import 'footer';
 @import 'page-réalisations';
 @import 'modale';
+@import 'loader';
 
 // Styles globaux
 body {
-    background-color: $background-color;
+    background-color: rgb(2, 0, 22);
     color: $text-color;
-    
     margin: 0;
     padding: 0;
     line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1600px;
+    width: 100%;
+    background-color: $background-color;
+    margin: 0 auto;
+    padding: 0em;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0em;
+    max-width: 1440px;
+    width:100%;
 }
 
 // Liens
@@ -27,7 +47,7 @@ a {
 p {
     color: $accent-color;
     text-decoration: none;
-    font-family: "lato", sans-serif;
+    font-family: "lato", sans-serif!important;
 }
 
 // Titres
