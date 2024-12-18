@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Optionnel : Fermer en cliquant à l'extérieur de la modale
+    // Fermer en cliquant à l'extérieur de la modale
     if (modalOverlay) {
         modalOverlay.addEventListener('click', function (e) {
             if (e.target === modalOverlay) {
@@ -53,4 +53,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+    
 });

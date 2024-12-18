@@ -15,7 +15,7 @@
 
     .project {
         display: flex; /* Aligner l'image et les détails horizontalement */
-        gap: 5rem; /* Espacement entre l'image et les détails */
+        gap: 1rem; /* Espacement entre l'image et les détails */
         border: 1px solid #333; /* Bordure pour le conteneur */
         border-radius: 8px; /* Coins arrondis */
         padding: 1rem; /* Espacement interne */
@@ -24,35 +24,44 @@
 
         &-content{
             display:flex;
-            gap: 3rem;
+            align-items: center;
+            gap: 2rem;
             @media (max-width: 768px) {
                 flex-direction: column;
             }
         }
 
         .project-image {
+           display:flex;
+           align-content:center;
+            
             img {
                 width: 500px; /* Largeur fixe pour l'image */
                 height: auto; /* Conserver les proportions */
                 border-radius: 8px; /* Coins arrondis */
             }
         }
+    
 
         .project-details {
             display: flex;
             flex-direction: column; /* Empiler les éléments verticalement */
-            flex: 1; /* Occuper tout l'espace disponible à droite */
+            justify-content: center;
+            // flex: 1; /* Occuper tout l'espace disponible à droite */
             gap: 1rem; /* Espacement entre la description et les technologies */
 
             .project-description {
                 font-size: 1rem; /* Taille de police normale */
                 line-height: 1.5; /* Interligne agréable pour la lecture */
+                p{
+                    margin:0;
+                }
             }
 
             .technologies {
                 h3 {
                     font-size: 1.2rem; /* Taille du titre des technologies */
-                    margin-bottom: 0.5rem; /* Espacement sous le titre */
+                    margin-bottom: 0.2rem; /* Espacement sous le titre */
                 }
 
                 /* Liste des technologies */
@@ -71,12 +80,12 @@
                         color: #fff; /* Couleur du texte */
 
                         img.tech-logo {
-                            width: 32px; /* Taille du logo */
+                            width: 25px; /* Taille du logo */
                             height: auto; /* Conserver les proportions */
                         }
 
                         span {
-                            font-size: 0.9rem; /* Taille de la police */
+                            font-size: 0.8rem; /* Taille de la police */
                         }
                     }
                 }

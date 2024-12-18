@@ -41,4 +41,16 @@ function mon_portfolio_setup() {
     add_editor_style('assets/css/main.css');
 }
 add_action('after_setup_theme', 'mon_portfolio_setup');
+
+function mon_portfolio_enqueue_swiper() {
+    // Ajouter les styles Swiper
+    wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), null);
+
+    // Ajouter le script Swiper
+    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
+
+    // Ajouter le script d'initialisation de Swiper
+    wp_enqueue_script('swiper-init', get_template_directory_uri() . '/assets/js/swiper-init.js', array('swiper-js'), null, true);
+}
+add_action('wp_enqueue_scripts', 'mon_portfolio_enqueue_swiper');
 ?>

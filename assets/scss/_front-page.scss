@@ -1,0 +1,58 @@
+.swiper-container {
+
+    height:100%;
+    width: auto;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    margin-top:100px;
+    width:500px;
+    flex-shrink: 0;
+    height:auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6; /* Réduit l'opacité des slides non actifs */
+    transform: scale(0.6); /* Réduit légèrement la taille des slides non actifs */
+    p{
+        font-size: 30px;
+    }
+    
+}
+
+.swiper-slide img {
+    align-self: center;
+    width: 200px;
+    height: auto;
+    object-fit: contain; /* Assure que tout le logo est visible */
+    margin: 20px;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    display: none !important; /* Cache les flèches */
+}
+.swiper-slide.swiper-slide-active {
+    opacity: 1; /* Le slide actif est entièrement visible */
+    transform: scale(1); /* Zoom sur le slide actif */
+}
+.ma_photo{
+    display:flex;
+    position:relative;
+    justify-content: left;
+    align-content: center;
+    z-index: 10;
+    img{
+        position: absolute;
+        right:40px;
+        top:35px;
+        width:200px;
+        height:auto;
+    }
+}

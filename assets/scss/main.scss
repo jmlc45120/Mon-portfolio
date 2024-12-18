@@ -2,6 +2,7 @@
 @import 'header';
 @import 'footer';
 @import 'page-réalisations';
+@import 'front-page';
 @import 'modale';
 @import 'loader';
 
@@ -34,6 +35,21 @@ main{
     width:100%;
 }
 
+section {
+    margin-bottom:50px;
+    padding-left:10px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: transform 1.0s ease, background-color 1.0s ease, box-shadow 1.0s ease , border 1.0s ease; /* Animation douce */
+}
+
+section:hover {
+    transform: scale(1.03); /* Zoom léger de 3% */
+    background-color: lighten($background-color, 2%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre légère pour l'effet de profondeur */
+    border:1px solid $accent-color-hover;
+}
+
 // Liens
 a {
     color: $accent-color;
@@ -45,15 +61,21 @@ a {
     }
 }
 p {
+    margin-left:30px;
+    font-size: 22px;
     color: $accent-color;
     text-decoration: none;
-    font-family: "lato", sans-serif!important;
+    font-family: "lato", sans-serif;
+
 }
 
 // Titres
 h1, h2, h3, h4, h5, h6 {
     font-family: "montserrat", sans-serif;
     color: $text-color;
+}
+h1{
+    font-size: 3em;
 }
 
 // Texte secondaire (par exemple, dans un pied de page ou une description)
@@ -75,3 +97,18 @@ hr, .border {
     padding: 10px;
     border-radius: 5px;
 }
+
+.swiper-slide img, .competence-icon {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.services{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding-right:150px;
+}
+
