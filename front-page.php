@@ -12,14 +12,18 @@ get_header();
         endif;?>
     </div>
     <section class="hero">
+        <div class="titre-accueil">
+            <h1 class="page-title">Bienvenue sur mon portfolio</h1>
+        </div>
         <div class="présentation">
-            <h1>Bienvenue sur mon portfolio</h1>
-            <p>Jean-Michel LE COUVIOUR <br>Développeur passionné, je crée des expériences numériques uniques.</p>
+            <h2>Présentation</h2>
+            <p>Jean-Michel LE COUVIOUR &nbsp; - &nbsp; Développeur Web WordPress<br>
+            Passionné par mon métier,&nbsp;&nbsp;je crée des expériences numériques uniques.</p>
         </div>
     </section>
     <section class="compétences">
-        <h1>Mes champs de compétences</h1>
-        <p> De la passion naissent la curiosité et l'envie d'exploration...<br> L'univers du développement web est en perpétuelle évolution, en continuelle mutation.<br> Veiller aux évolutions technologiques, enrichir continuellement ses connaissances et explorer de nouvelles perspectives définissent l'essence même du développeur.</p>
+        <h2>Mes champs de compétences</h2>
+        <p> De la passion naissent la curiosité et l'envie d'exploration ...<br> L'univers du développement web est en perpétuelle évolution, en continuelle mutation.<br> Veiller aux évolutions technologiques, enrichir continuellement ses connaissances<br>et explorer de nouvelles perspectives définissent l'essence même du développeur.</p>
         <div class="swiper-container">
     <div class="swiper-wrapper">
         <?php
@@ -58,7 +62,7 @@ get_header();
     </section>
     <section class="services">
         <div class="descript_services">
-            <h1>Mes offres de services</h1>
+            <h2>Mes offres de services</h2>
             <p>Développement de sites web : Création de sites vitrine, e-commerce.</p>
             <p>Personnalisation WordPress : Thèmes et plugins sur mesure.</p>
             <p>Optimisation de performance : Accélérer les temps de chargement.</p>

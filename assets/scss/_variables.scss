@@ -2,13 +2,15 @@
 $background-color: #080333; // Couleur de fond principale
 $text-color: #EAEAEA;       // Texte principal
 $text-secondary: #B3B3B3;   // Texte secondaire (moins important)
-$text-hover: #f1f5ab;       // Texte au survol
+$text-hover: #6a9be5;       // Texte au survol
 
 // Couleurs d'accentuation
 $accent-color: #abd5f5;     // Accent principal (liens, boutons, etc.)
-$accent-color-hover:#4797d4 ; // Accent au survol
+$accent-color-hover:#071444 ; // Accent au survol
 $complementary-color: #03DAC6; // Couleur complémentaire
 $error-color: #CF6679;      // Couleur pour les erreurs
 
 // Autres
 $border-color: #272727;     // Couleur des bordures
+
+$theme-path: '/wp-content/themes/mon-portfolio-child';

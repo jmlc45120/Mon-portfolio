@@ -3,6 +3,14 @@ header {
     color: $text-color;
     padding: 24px;
     text-align: center;
+    opacity: 0; /* Caché par défaut */
+    transform: translateY(-40px); /* Légèrement déplacé vers le haut */
+    transition: opacity 1s ease, transform 1s ease; /* Animation fluide */
+
+    &.show{
+        opacity: 1; /* Complètement visible */
+        transform: translateY(0); /* Position normale */
+    }
 
     nav ul {
         list-style: none;
@@ -22,25 +30,57 @@ header {
             transition: transform 0.5s ease, color 0.3s ease;
 
             &:hover {
-                color: $accent-color-hover;
+                color: $text-hover;
                 transform: scale(1.08) translateY(-2px);
             }
         }
     }
 }
-
+.main-navigation{
+    display:flex;
+    align-content:center;
+}
 .site-header {
-    margin: 0px 0px 100px 0px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 0px 0px 50px 0px;
     max-width: 1440px;
     padding:0;
     width:100%;
     height: 150px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-
 }
 .custom-logo {
     max-width: 150px;
     height: auto;
+}
+
+/* Cible uniquement le lien LinkedIn dans le menu */
+#menu-item-69 a {
+    display: inline-block; /* Permet de manipuler les dimensions */
+    width: 50px; /* Largeur de l'icône */
+    height: 50px; /* Hauteur de l'icône */
+    background: url("#{$theme-path}/assets/logos/linkedin.png") no-repeat center center; /* Chemin vers ton icône */
+    background-size: contain; /* Ajuste la taille de l'image pour qu'elle rentre bien */
+    text-indent: -9999px; /* Masque le texte "linkedin" */
+    overflow: hidden; /* Cache les éventuels débordements */
+    border-radius: 50%; /* Optionnel : arrondi pour un effet moderne */
+}
+
+/* Cible uniquement le lien Malt dans le menu */
+#menu-item-70 a {
+    display: inline-block; /* Permet de manipuler les dimensions */
+    width: 50px; /* Largeur de l'icône */
+    height: 50px; /* Hauteur de l'icône */
+    background: url("#{$theme-path}/assets/logos/malt4.png") no-repeat center center; /* Chemin vers ton icône */
+    background-size: contain; /* Ajuste la taille de l'image pour qu'elle rentre bien */
+    text-indent: -9999px; /* Masque le texte "Malt" */
+    overflow: hidden; /* Cache les éventuels débordements */
+    border-radius: 50%; /* Optionnel : arrondi pour un effet moderne */
+}
+
+/* Ajoute un effet au survol */
+#menu-item-69 a:hover {
+    background-color: rgba(0, 119, 181, 0.1); /* Optionnel : fond bleu clair au survol */
+    transition: background-color 0.3s ease; /* Animation fluide */
 }

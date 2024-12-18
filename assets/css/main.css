@@ -4,6 +4,18 @@ header {
   color: #EAEAEA;
   padding: 24px;
   text-align: center;
+  opacity: 0; /* Caché par défaut */
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px); /* Légèrement déplacé vers le haut */
+  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+  transition: opacity 1s ease, -webkit-transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease, -webkit-transform 1s ease; /* Animation fluide */
+}
+header.show {
+  opacity: 1; /* Complètement visible */
+  -webkit-transform: translateY(0);
+          transform: translateY(0); /* Position normale */
 }
 header nav ul {
   list-style: none;
@@ -25,17 +37,20 @@ header nav ul a {
   transition: transform 0.5s ease, color 0.3s ease, -webkit-transform 0.5s ease;
 }
 header nav ul a:hover {
-  color: #4797d4;
+  color: #6a9be5;
   -webkit-transform: scale(1.08) translateY(-2px);
           transform: scale(1.08) translateY(-2px);
 }
 
+.main-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
 .site-header {
-  margin: 0px 0px 100px 0px;
-  max-width: 1440px;
-  padding: 0;
-  width: 100%;
-  height: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,11 +60,47 @@ header nav ul a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0px 0px 50px 0px;
+  max-width: 1440px;
+  padding: 0;
+  width: 100%;
+  height: 150px;
 }
 
 .custom-logo {
   max-width: 150px;
   height: auto;
+}
+
+/* Cible uniquement le lien LinkedIn dans le menu */
+#menu-item-69 a {
+  display: inline-block; /* Permet de manipuler les dimensions */
+  width: 50px; /* Largeur de l'icône */
+  height: 50px; /* Hauteur de l'icône */
+  background: url("/wp-content/themes/mon-portfolio-child/assets/logos/linkedin.png") no-repeat center center; /* Chemin vers ton icône */
+  background-size: contain; /* Ajuste la taille de l'image pour qu'elle rentre bien */
+  text-indent: -9999px; /* Masque le texte "linkedin" */
+  overflow: hidden; /* Cache les éventuels débordements */
+  border-radius: 50%; /* Optionnel : arrondi pour un effet moderne */
+}
+
+/* Cible uniquement le lien Malt dans le menu */
+#menu-item-70 a {
+  display: inline-block; /* Permet de manipuler les dimensions */
+  width: 50px; /* Largeur de l'icône */
+  height: 50px; /* Hauteur de l'icône */
+  background: url("/wp-content/themes/mon-portfolio-child/assets/logos/malt4.png") no-repeat center center; /* Chemin vers ton icône */
+  background-size: contain; /* Ajuste la taille de l'image pour qu'elle rentre bien */
+  text-indent: -9999px; /* Masque le texte "Malt" */
+  overflow: hidden; /* Cache les éventuels débordements */
+  border-radius: 50%; /* Optionnel : arrondi pour un effet moderne */
+}
+
+/* Ajoute un effet au survol */
+#menu-item-69 a:hover {
+  background-color: rgba(0, 119, 181, 0.1); /* Optionnel : fond bleu clair au survol */
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* Animation fluide */
 }
 
 footer {
@@ -61,11 +112,11 @@ footer {
 }
 
 .projects-page {
-  padding: 7rem;
+  padding: 0rem;
 }
 .projects-page h1 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .projects-page .projects-list {
   display: -webkit-box;
@@ -82,11 +133,26 @@ footer {
   display: -ms-flexbox;
   display: flex; /* Aligner l'image et les détails horizontalement */
   gap: 1rem; /* Espacement entre l'image et les détails */
-  border: 1px solid #333; /* Bordure pour le conteneur */
+  border: 1px solid #0b0a2f; /* Bordure pour le conteneur */
   border-radius: 8px; /* Coins arrondis */
   padding: 1rem; /* Espacement interne */
-  background-color: #05032c; /* Fond sombre */
+  background-color: #06042c; /* Fond sombre */
   color: #e0e0e0; /* Texte clair */
+  opacity: 0; /* Caché par défaut */
+  -webkit-transform: translateY(200px);
+          transform: translateY(200px); /* Déplacement vers le bas */
+  -webkit-transition: opacity 0.6s ease, border-color 1s ease, -webkit-transform 1.5s ease;
+  transition: opacity 0.6s ease, border-color 1s ease, -webkit-transform 1.5s ease;
+  transition: opacity 0.6s ease, transform 1.5s ease, border-color 1s ease;
+  transition: opacity 0.6s ease, transform 1.5s ease, border-color 1s ease, -webkit-transform 1.5s ease; /* Transition fluide */
+}
+.projects-page .project.visible {
+  opacity: 1; /* Devient visible */
+  -webkit-transform: translateY(0);
+          transform: translateY(0); /* Remonte à sa position initiale */
+}
+.projects-page .project:hover {
+  border-color: #071444;
 }
 .projects-page .project-content {
   display: -webkit-box;
@@ -113,7 +179,7 @@ footer {
       align-content: center;
 }
 .projects-page .project .project-image img {
-  width: 500px; /* Largeur fixe pour l'image */
+  width: 520px; /* Largeur fixe pour l'image */
   height: auto; /* Conserver les proportions */
   border-radius: 8px; /* Coins arrondis */
 }
@@ -131,10 +197,10 @@ footer {
   gap: 1rem; /* Espacement entre la description et les technologies */
 }
 .projects-page .project .project-details .project-description {
-  font-size: 1rem; /* Taille de police normale */
   line-height: 1.5; /* Interligne agréable pour la lecture */
 }
 .projects-page .project .project-details .project-description p {
+  font-size: 1.3rem; /* Taille de police normale */
   margin: 0;
 }
 .projects-page .project .project-details .technologies {
@@ -190,6 +256,25 @@ footer {
           flex: 1 1 100%;
 }
 
+.titre-accueil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.présentation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .swiper-container {
   height: 100%;
   width: auto;
@@ -200,7 +285,7 @@ footer {
 }
 
 .swiper-slide {
-  margin-top: 100px;
+  margin-top: 30px;
   width: 500px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -264,7 +349,7 @@ footer {
 .ma_photo img {
   position: absolute;
   right: 40px;
-  top: 35px;
+  top: 120px;
   width: 200px;
   height: auto;
 }
@@ -319,6 +404,9 @@ footer {
   /* Champs du formulaire */
   /* Centrer le bouton Envoyer */
   /* Bouton Envoyer */
+}
+.modal-content .wpcf7-form.init p {
+  margin: 0 0 20px 0;
 }
 .modal-content .wpcf7-form-control-wrap {
   position: relative; /* Nécessaire pour positionner les erreurs */
@@ -533,7 +621,7 @@ main {
 }
 
 section {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   padding-left: 10px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -549,7 +637,7 @@ section:hover {
   background-color: #0a043d;
   -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre légère pour l'effet de profondeur */
-  border: 1px solid #4797d4;
+  border: 1px solid #071444;
 }
 
 a {
@@ -558,7 +646,7 @@ a {
   font-family: "montserrat", sans-serif;
 }
 a:hover {
-  color: #f1f5ab;
+  color: #6a9be5;
 }
 
 p {
@@ -578,8 +666,28 @@ h1 {
   font-size: 3em;
 }
 
+h2 {
+  font-size: 2em;
+}
+
 .text-secondary {
   color: #B3B3B3;
+}
+
+.page-title {
+  opacity: 0; /* Caché par défaut */
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px); /* Positionné plus haut */
+  -webkit-transition: opacity 1s ease, -webkit-transform 2s ease;
+  transition: opacity 1s ease, -webkit-transform 2s ease;
+  transition: opacity 1s ease, transform 2s ease;
+  transition: opacity 1s ease, transform 2s ease, -webkit-transform 2s ease; /* Animation fluide */
+}
+
+.page-title.animate {
+  opacity: 1; /* Devenir visible */
+  -webkit-transform: translateY(0);
+          transform: translateY(0); /* Revenir à sa position initiale */
 }
 
 hr, .border {

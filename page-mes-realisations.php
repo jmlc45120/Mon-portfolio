@@ -3,7 +3,7 @@
 get_header(); ?>
 
 <main class="projects-page">
-    <h1>Mes Réalisations</h1>
+    <h1 class="page-title">Mes Réalisations</h1>
 
     <div class="projects-list">
         <?php

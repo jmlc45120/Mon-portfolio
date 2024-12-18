@@ -36,7 +36,7 @@ main{
 }
 
 section {
-    margin-bottom:50px;
+    margin-bottom:100px;
     padding-left:10px;
     border: 1px solid transparent;
     border-radius: 8px;
@@ -74,13 +74,27 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "montserrat", sans-serif;
     color: $text-color;
 }
+
 h1{
     font-size: 3em;
 }
-
+h2{
+    font-size: 2em;
+}
 // Texte secondaire (par exemple, dans un pied de page ou une description)
 .text-secondary {
     color: $text-secondary;
+}
+
+.page-title {
+    opacity: 0; /* Caché par défaut */
+    transform: translateY(-200px); /* Positionné plus haut */
+    transition: opacity 1s ease, transform 2s ease; /* Animation fluide */
+}
+
+.page-title.animate {
+    opacity: 1; /* Devenir visible */
+    transform: translateY(0); /* Revenir à sa position initiale */
 }
 
 // Bordures

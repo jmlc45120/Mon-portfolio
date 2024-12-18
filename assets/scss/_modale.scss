@@ -58,6 +58,10 @@
     text-align: left;
     position: relative;
 
+    .wpcf7-form.init p{
+        margin:0 0 20px 0;
+    }
+        
     /* Parent des champs du formulaire */
     .wpcf7-form-control-wrap {
         position: relative; /* Nécessaire pour positionner les erreurs */
