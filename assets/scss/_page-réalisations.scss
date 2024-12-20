@@ -3,7 +3,6 @@
 
     h1 {
         text-align: center;
-        margin-bottom: 3rem;
     }
 
     .projects-list {
@@ -22,8 +21,8 @@
         background-color: #06042c; /* Fond sombre */
         color: #e0e0e0; /* Texte clair */
         opacity: 0; /* Caché par défaut */
-        transform: translateY(200px); /* Déplacement vers le bas */
-        transition: opacity 0.6s ease, transform 1.5s ease, border-color 1.0s ease;; /* Transition fluide */
+        transform: translateY(250px); /* Déplacement vers le bas */
+        transition: opacity 5s ease, transform 2s ease, border-color 1.0s ease;; /* Transition fluide */
 
         &.visible{
             opacity: 1; /* Devient visible */
@@ -65,7 +64,7 @@
                 
                 line-height: 1.5; /* Interligne agréable pour la lecture */
                 p{
-                    font-size: 1.3rem; /* Taille de police normale */
+                    font-size: 1.1rem; /* Taille de police normale */
                     margin:0;
                 }
             }
@@ -90,6 +89,7 @@
                         border-radius: 4px; /* Coins arrondis */
                         padding: 0.5rem; /* Espacement interne */
                         color: #fff; /* Couleur du texte */
+                        transition: transform 0.5s ease;
 
                         img.tech-logo {
                             width: 25px; /* Taille du logo */
@@ -98,6 +98,9 @@
 
                         span {
                             font-size: 0.8rem; /* Taille de la police */
+                        }
+                        &:hover{
+                            transform: scale(1.1);
                         }
                     }
                 }

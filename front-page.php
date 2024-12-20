@@ -11,19 +11,20 @@ get_header();
         <?php
         endif;?>
     </div>
-    <section class="hero">
         <div class="titre-accueil">
             <h1 class="page-title">Bienvenue sur mon portfolio</h1>
         </div>
+        <section class="hero">
         <div class="présentation">
-            <h2>Présentation</h2>
-            <p>Jean-Michel LE COUVIOUR &nbsp; - &nbsp; Développeur Web WordPress<br>
-            Passionné par mon métier,&nbsp;&nbsp;je crée des expériences numériques uniques.</p>
+            <h2>Jean-Michel Le Couviour<br>Développeur Web WordPress</h2>
+            <p>Mon parcours de formation s'est toujours orienté vers le technologique. <br>J'ai d'abord acquis une solide expérience dans l'informatique industrielle et <br>la
+            maitrise de languages avancés comme le C++. <br>Aujourd'hui, passionné par mon métier de développeur,il me permet de créer <br>des expériences numériques uniques,
+            au travers de sites fonctionnels et esthetiques.</p>
         </div>
     </section>
     <section class="compétences">
         <h2>Mes champs de compétences</h2>
-        <p> De la passion naissent la curiosité et l'envie d'exploration ...<br> L'univers du développement web est en perpétuelle évolution, en continuelle mutation.<br> Veiller aux évolutions technologiques, enrichir continuellement ses connaissances<br>et explorer de nouvelles perspectives définissent l'essence même du développeur.</p>
+        <p> De la passion naissent la curiosité et le besoin continuel d'explorer ...<br> Le monde du développement web est en continuelle mutation, en évolution perpétuelle.<br> Veiller aux évolutions technologiques, enrichir continuellement ses connaissances<br>et explorer de nouvelles perspectives définissent l'essence même du développeur.</p>
         <div class="swiper-container">
     <div class="swiper-wrapper">
         <?php

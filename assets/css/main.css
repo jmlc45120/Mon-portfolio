@@ -5,29 +5,53 @@ header {
   padding: 24px;
   text-align: center;
   opacity: 0; /* Caché par défaut */
-  -webkit-transform: translateY(-40px);
-          transform: translateY(-40px); /* Légèrement déplacé vers le haut */
-  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-  transition: opacity 1s ease, -webkit-transform 1s ease;
-  transition: opacity 1s ease, transform 1s ease;
-  transition: opacity 1s ease, transform 1s ease, -webkit-transform 1s ease; /* Animation fluide */
+  -webkit-transform: translateY(240px);
+          transform: translateY(240px); /* Légèrement déplacé vers le haut */
+  -webkit-transition: opacity 2s ease, -webkit-transform 1s ease;
+  transition: opacity 2s ease, -webkit-transform 1s ease;
+  transition: opacity 2s ease, transform 1s ease;
+  transition: opacity 2s ease, transform 1s ease, -webkit-transform 1s ease; /* Animation fluide */
 }
 header.show {
   opacity: 1; /* Complètement visible */
   -webkit-transform: translateY(0);
           transform: translateY(0); /* Position normale */
 }
-header nav ul {
+header.no-animation {
+  -webkit-transform: none;
+          transform: none; /* Pas de translation avant calage page en haut */
+  -webkit-transition: none;
+  transition: none; /* Désactive la transition */
+}
+
+nav ul.main-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Active Flexbox */
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; /* Aligne horizontalement */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Centre verticalement */
   list-style: none;
   margin: 0;
   padding: 0;
   font-size: 24px;
 }
-header nav ul li {
-  display: inline-block;
-  margin: 0 25px;
+nav ul.main-navigation li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Flexbox pour centrer verticalement */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 25px; /* Espacement horizontal */
 }
-header nav ul a {
+nav ul.main-navigation a {
   color: #EAEAEA;
   text-decoration: none;
   display: inline-block;
@@ -36,18 +60,10 @@ header nav ul a {
   transition: transform 0.5s ease, color 0.3s ease;
   transition: transform 0.5s ease, color 0.3s ease, -webkit-transform 0.5s ease;
 }
-header nav ul a:hover {
+nav ul.main-navigation a:hover {
   color: #6a9be5;
-  -webkit-transform: scale(1.08) translateY(-2px);
-          transform: scale(1.08) translateY(-2px);
-}
-
-.main-navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-transform: scale(1.08) translateY(-4px);
+          transform: scale(1.08) translateY(-4px);
 }
 
 .site-header {
@@ -60,7 +76,7 @@ header nav ul a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0px 0px 50px 0px;
+  margin: 0 0 50px 0;
   max-width: 1440px;
   padding: 0;
   width: 100%;
@@ -72,37 +88,169 @@ header nav ul a:hover {
   height: auto;
 }
 
-/* Cible uniquement le lien LinkedIn dans le menu */
 #menu-item-69 a {
   display: inline-block; /* Permet de manipuler les dimensions */
   width: 50px; /* Largeur de l'icône */
   height: 50px; /* Hauteur de l'icône */
-  background: url("/wp-content/themes/mon-portfolio-child/assets/logos/linkedin.png") no-repeat center center; /* Chemin vers ton icône */
-  background-size: contain; /* Ajuste la taille de l'image pour qu'elle rentre bien */
-  text-indent: -9999px; /* Masque le texte "linkedin" */
-  overflow: hidden; /* Cache les éventuels débordements */
-  border-radius: 50%; /* Optionnel : arrondi pour un effet moderne */
+  background: url("/wp-content/themes/mon-portfolio-child/assets/logos/linkedin.png") no-repeat center center; /* Chemin vers l'icône */
+  background-size: contain; /* Ajuste la taille de l'image */
+  text-indent: -9999px; /* Masque le texte "LinkedIn" */
+  overflow: hidden; /* Cache les débordements */
+  border-radius: 50%; /* Arrondi pour un effet moderne */
+  -webkit-transition: background-color 0.3s ease, -webkit-transform 0.5s ease;
+  transition: background-color 0.3s ease, -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease, background-color 0.3s ease;
+  transition: transform 0.5s ease, background-color 0.3s ease, -webkit-transform 0.5s ease;
+}
+#menu-item-69 a:hover {
+  background-color: rgba(0, 119, 181, 0.1); /* Fond bleu clair au survol */
 }
 
-/* Cible uniquement le lien Malt dans le menu */
 #menu-item-70 a {
   display: inline-block; /* Permet de manipuler les dimensions */
   width: 50px; /* Largeur de l'icône */
   height: 50px; /* Hauteur de l'icône */
-  background: url("/wp-content/themes/mon-portfolio-child/assets/logos/malt4.png") no-repeat center center; /* Chemin vers ton icône */
-  background-size: contain; /* Ajuste la taille de l'image pour qu'elle rentre bien */
+  background: url("/wp-content/themes/mon-portfolio-child/assets/logos/malt4.png") no-repeat center center; /* Chemin vers l'icône */
+  background-size: contain; /* Ajuste la taille de l'image */
   text-indent: -9999px; /* Masque le texte "Malt" */
-  overflow: hidden; /* Cache les éventuels débordements */
-  border-radius: 50%; /* Optionnel : arrondi pour un effet moderne */
+  overflow: hidden; /* Cache les débordements */
+  border-radius: 50%; /* Arrondi pour un effet moderne */
+  -webkit-transition: background-color 0.3s ease, -webkit-transform 0.5s ease;
+  transition: background-color 0.3s ease, -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease, background-color 0.3s ease;
+  transition: transform 0.5s ease, background-color 0.3s ease, -webkit-transform 0.5s ease;
+}
+#menu-item-70 a:hover {
+  background-color: rgba(255, 102, 0, 0.1); /* Fond orange clair au survol */
 }
 
-/* Ajoute un effet au survol */
-#menu-item-69 a:hover {
-  background-color: rgba(0, 119, 181, 0.1); /* Optionnel : fond bleu clair au survol */
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease; /* Animation fluide */
+.main-navigation li a {
+  height: 50px; /* Hauteur pour garantir un alignement constant */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Active Flexbox */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Centre verticalement */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; /* Centre horizontalement */
+  padding: 0 15px; /* Espacement interne */
+  border-radius: 4px; /* Coins légèrement arrondis (optionnel) */
 }
 
+.burger-menu {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.burger-bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.1s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease, opacity 0.3s ease;
+  transition: transform 0.1s ease, opacity 0.3s ease, -webkit-transform 0.1s ease;
+}
+
+@media (max-width: 1000px) {
+  .site-header.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 300px;
+    width: 400px;
+    padding: 0;
+    height: 300px;
+  }
+  .header__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    max-width: 1000px;
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    z-index: 10;
+  }
+  .header__nav {
+    display: none;
+    position: fixed;
+  }
+  .header__nav.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: fixed;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 2;
+    opacity: 1;
+  }
+  .burger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header__nav.active + .navigation {
+    display: none;
+  }
+  /* Transformations pour la croix */
+  .header__nav.active ~ .burger-menu .burger-bar:nth-child(1) {
+    -webkit-transform: translateY(7px) rotate(45deg);
+            transform: translateY(7px) rotate(45deg);
+  }
+  .header__nav.active ~ .burger-menu .burger-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .header__nav.active ~ .burger-menu .burger-bar:nth-child(3) {
+    -webkit-transform: translateY(-7px) rotate(-45deg);
+            transform: translateY(-7px) rotate(-45deg);
+  }
+  .main-navigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 footer {
   margin: 100px;
   background-color: #080333;
@@ -116,7 +264,6 @@ footer {
 }
 .projects-page h1 {
   text-align: center;
-  margin-bottom: 3rem;
 }
 .projects-page .projects-list {
   display: -webkit-box;
@@ -139,12 +286,12 @@ footer {
   background-color: #06042c; /* Fond sombre */
   color: #e0e0e0; /* Texte clair */
   opacity: 0; /* Caché par défaut */
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px); /* Déplacement vers le bas */
-  -webkit-transition: opacity 0.6s ease, border-color 1s ease, -webkit-transform 1.5s ease;
-  transition: opacity 0.6s ease, border-color 1s ease, -webkit-transform 1.5s ease;
-  transition: opacity 0.6s ease, transform 1.5s ease, border-color 1s ease;
-  transition: opacity 0.6s ease, transform 1.5s ease, border-color 1s ease, -webkit-transform 1.5s ease; /* Transition fluide */
+  -webkit-transform: translateY(250px);
+          transform: translateY(250px); /* Déplacement vers le bas */
+  -webkit-transition: opacity 5s ease, border-color 1s ease, -webkit-transform 2s ease;
+  transition: opacity 5s ease, border-color 1s ease, -webkit-transform 2s ease;
+  transition: opacity 5s ease, transform 2s ease, border-color 1s ease;
+  transition: opacity 5s ease, transform 2s ease, border-color 1s ease, -webkit-transform 2s ease; /* Transition fluide */
 }
 .projects-page .project.visible {
   opacity: 1; /* Devient visible */
@@ -200,7 +347,7 @@ footer {
   line-height: 1.5; /* Interligne agréable pour la lecture */
 }
 .projects-page .project .project-details .project-description p {
-  font-size: 1.3rem; /* Taille de police normale */
+  font-size: 1.1rem; /* Taille de police normale */
   margin: 0;
 }
 .projects-page .project .project-details .technologies {
@@ -230,6 +377,10 @@ footer {
   border-radius: 4px; /* Coins arrondis */
   padding: 0.5rem; /* Espacement interne */
   color: #fff; /* Couleur du texte */
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 .projects-page .project .project-details .technologies .technology-list .technology img.tech-logo {
   width: 25px; /* Taille du logo */
@@ -237,6 +388,10 @@ footer {
 }
 .projects-page .project .project-details .technologies .technology-list .technology span {
   font-size: 0.8rem; /* Taille de la police */
+}
+.projects-page .project .project-details .technologies .technology-list .technology:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 @media (max-width: 768px) {
   .projects-page .project {
@@ -276,51 +431,50 @@ footer {
 }
 
 .swiper-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: b;
+      align-content: b;
   height: 100%;
   width: auto;
   max-width: 1600px;
   margin: 0 auto;
+  padding-bottom: 30px;
   background-color: transparent;
   overflow: hidden;
 }
 
 .swiper-slide {
-  margin-top: 30px;
-  width: 500px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  height: auto;
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: flex; /* Active Flexbox */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; /* Empile les enfants verticalement */
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; /* Aligne tout en bas */
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
-  font-size: 28px;
-  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
-  opacity: 0.6; /* Réduit l'opacité des slides non actifs */
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6); /* Réduit légèrement la taille des slides non actifs */
+          align-items: center; /* Centre horizontalement */
+  text-align: center; /* Centre le texte */
+  height: 100%; /* Hauteur complète des slides */
+  width: 500px; /* Largeur définie */
+  margin-top: 30px;
+}
+.swiper-slide img {
+  max-height: 150px; /* Assure une hauteur uniforme pour les logos */
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain; /* Garde les proportions des images */
+  margin-bottom: 10px; /* Espacement entre le logo et le texte */
 }
 .swiper-slide p {
-  font-size: 30px;
-}
-
-.swiper-slide img {
-  -ms-flex-item-align: center;
-      align-self: center;
-  width: 200px;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain; /* Assure que tout le logo est visible */
-  margin: 20px;
+  margin: 0; /* Enlève les marges par défaut */
+  font-size: 20px;
+  line-height: 1.2; /* Améliore la lisibilité */
 }
 
 .swiper-button-next,
@@ -339,6 +493,9 @@ footer {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  opacity: 0;
+  -webkit-transition: opacity 2s ease;
+  transition: opacity 2s ease;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
@@ -348,10 +505,14 @@ footer {
 }
 .ma_photo img {
   position: absolute;
-  right: 40px;
-  top: 120px;
+  right: 60px;
+  top: 300px;
   width: 200px;
   height: auto;
+}
+
+.ma_photo.visible {
+  opacity: 1;
 }
 
 .modal-overlay {
@@ -475,8 +636,8 @@ footer {
   background-color: #f0f0f0;
   color: #000000;
   border-color: #09034b;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
 }
 
 .wpcf7-spinner {
@@ -516,8 +677,8 @@ footer {
   background-color: #f0f0f0;
   color: #000000;
   border-color: #09034b;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
 }
 
 /* Loader global */
@@ -625,15 +786,24 @@ section {
   padding-left: 10px;
   border: 1px solid transparent;
   border-radius: 8px;
-  -webkit-transition: background-color 1s ease, border 1s ease, -webkit-transform 1s ease, -webkit-box-shadow 1s ease;
-  transition: background-color 1s ease, border 1s ease, -webkit-transform 1s ease, -webkit-box-shadow 1s ease;
-  transition: transform 1s ease, background-color 1s ease, box-shadow 1s ease, border 1s ease;
-  transition: transform 1s ease, background-color 1s ease, box-shadow 1s ease, border 1s ease, -webkit-transform 1s ease, -webkit-box-shadow 1s ease; /* Animation douce */
+  opacity: 0;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: opacity 3s ease, background-color 1s ease, border 1s ease, -webkit-transform 1s ease, -webkit-box-shadow 1s ease;
+  transition: opacity 3s ease, background-color 1s ease, border 1s ease, -webkit-transform 1s ease, -webkit-box-shadow 1s ease;
+  transition: opacity 3s ease, transform 1s ease, background-color 1s ease, box-shadow 1s ease, border 1s ease;
+  transition: opacity 3s ease, transform 1s ease, background-color 1s ease, box-shadow 1s ease, border 1s ease, -webkit-transform 1s ease, -webkit-box-shadow 1s ease;
+}
+
+section.visible {
+  opacity: 1; /* Complètement visible */
+  -webkit-transform: translateY(0);
+          transform: translateY(0); /* Retour à la position normale */
 }
 
 section:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03); /* Zoom léger de 3% */
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07); /* Zoom léger de 3% */
   background-color: #0a043d;
   -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre légère pour l'effet de profondeur */
@@ -663,11 +833,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 4em;
+  margin-bottom: 150px;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-left: 30px;
+  -webkit-margin-after: 0em;
+          margin-block-end: 0em;
 }
 
 .text-secondary {
@@ -721,4 +899,38 @@ hr, .border {
       -ms-flex-align: center;
           align-items: center;
   padding-right: 150px;
+}
+
+@media (max-width: 1100px) {
+  .project {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 900px) {
+  .project-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .project-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .project-image img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
 }/*# sourceMappingURL=main.css.map */

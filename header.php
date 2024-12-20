@@ -23,7 +23,7 @@
             } 
             ?>
         </div>
-        <nav>
+        <nav class="header__nav">
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'main-menu',
@@ -32,4 +32,9 @@
             ));
             ?>
         </nav>
+        <div class="burger-menu" aria-label="<?php esc_attr_e('Toggle navigation', 'textdomain'); ?>" role="button" tabindex="0">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </div>
     </header>

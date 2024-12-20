@@ -5,16 +5,41 @@ document.addEventListener('DOMContentLoaded', function () {
     const modalOverlay = document.querySelector('#contact-modal'); // La modale complète
     const header = document.querySelector('header'); // Sélectionne le header
     const title = document.querySelector('.page-title');
+    const sections = document.querySelectorAll('section');
+    const face = document.querySelector('.ma_photo');
+    const burgerMenu = document.querySelector('.burger-menu');
+    const headerNav = document.querySelector('.header__nav');
+
+    burgerMenu.addEventListener('click', function() {
+        headerNav.classList.toggle('active');
+        document.body.classList.toggle("no-scroll");
+        
+    });
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 1000) {
+            headerNav.classList.remove('active');
+        }
+    });
 
     // animation verticale descendante du header
     if (header) {
         setTimeout(() => {
             header.classList.add('show');
-        }, 100);
+        }, 300);
     }
     // animation verticale descendante du titre de chaque page
     if (title) {
         title.classList.add('animate');
+    }
+
+    sections.forEach((section, index) => {
+        setTimeout(() => {
+            section.classList.add('visible'); // Ajoute la classe visible avec un délai
+        }, index * 400); // Décale l'apparition de chaque section de 400ms
+    });
+    if (face) {
+        face.classList.add('visible');
     }
 
     // Fonction pour ouvrir la modale
@@ -65,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function revealProjects() {
         const windowHeight = window.innerHeight; // Hauteur de la fenêtre visible
-        const revealPoint = 150; // Distance avant déclenchement de l'animation
+        const revealPoint = 40; // Distance avant déclenchement de l'animation
 
         projects.forEach((project, index) => {
             const projectTop = project.getBoundingClientRect().top; // Position par rapport à la fenêtre
@@ -73,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Vérifie si l'élément est visible
             if (projectTop < windowHeight - revealPoint) {
                 project.classList.add('visible'); // Ajoute la classe visible
-                console.log(`Projet ${index + 1} révélé`);
             }
         });
     }

@@ -5,44 +5,43 @@
 .présentation{
     display: flex;
     flex-direction: column;
-
 }
 
 .swiper-container {
-
+    display:flex;
+    align-content:b;
     height:100%;
     width: auto;
     max-width: 1600px;
     margin: 0 auto;
+    padding-bottom:30px;
     background-color: transparent;
     overflow: hidden;
 }
 
 .swiper-slide {
-    margin-top:30px;
-    width:500px;
-    flex-shrink: 0;
-    height:auto;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0.6; /* Réduit l'opacité des slides non actifs */
-    transform: scale(0.6); /* Réduit légèrement la taille des slides non actifs */
-    p{
-        font-size: 30px;
-    }
-    
-}
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Empile les enfants verticalement */
+    justify-content: flex-end; /* Aligne tout en bas */
+    align-items: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte */
 
-.swiper-slide img {
-    align-self: center;
-    width: 200px;
-    height: auto;
-    object-fit: contain; /* Assure que tout le logo est visible */
-    margin: 20px;
+    height: 100%; /* Hauteur complète des slides */
+    width: 500px; /* Largeur définie */
+    margin-top: 30px;
+
+    img {
+        max-height: 150px; /* Assure une hauteur uniforme pour les logos */
+        width:auto;
+        object-fit: contain; /* Garde les proportions des images */
+        margin-bottom: 10px; /* Espacement entre le logo et le texte */
+    }
+
+    p {
+        margin: 0; /* Enlève les marges par défaut */
+        font-size: 20px;
+        line-height: 1.2; /* Améliore la lisibilité */
+    }
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -55,14 +54,20 @@
 .ma_photo{
     display:flex;
     position:relative;
+    opacity:0;
+    transition:opacity 2s ease;
     justify-content: left;
     align-content: center;
     z-index: 10;
     img{
         position: absolute;
-        right:40px;
-        top:120px;
+        right:60px;
+        top:300px;
         width:200px;
         height:auto;
     }
 }
+.ma_photo.visible{
+    opacity:1; 
+}
+
