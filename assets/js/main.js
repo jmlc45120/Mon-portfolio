@@ -10,15 +10,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const burgerMenu = document.querySelector('.burger-menu');
     const headerNav = document.querySelector('.header__nav');
 
+    function toggleNoScroll() {
+        if (window.innerWidth <= 700 && headerNav.classList.contains('active')) {
+            document.body.classList.add('no-scroll'); // Désactive le scroll
+        } else {
+            document.body.classList.remove('no-scroll'); // Réactive le scroll
+        }
+    }
+
     burgerMenu.addEventListener('click', function() {
         headerNav.classList.toggle('active');
-        document.body.classList.toggle("no-scroll");
-        
+        toggleNoScroll();
     });
 
     window.addEventListener('resize', function() {
         if (window.innerWidth > 1000) {
             headerNav.classList.remove('active');
+            document.body.classList.remove('no-scroll'); // Réactive le scroll si plus grand que 1000px
+        } else {
+            toggleNoScroll(); // Évalue si `no-scroll` doit être appliqué
         }
     });
 

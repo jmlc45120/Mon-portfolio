@@ -9,10 +9,11 @@
 
 .swiper-container {
     display:flex;
-    align-content:b;
+    align-content:flex-end;
     height:100%;
-    width: auto;
+    width: 100%;
     max-width: 1600px;
+    width:100%;
     margin: 0 auto;
     padding-bottom:30px;
     background-color: transparent;
@@ -20,18 +21,16 @@
 }
 
 .swiper-slide {
-    display: flex; /* Active Flexbox */
-    flex-direction: column; /* Empile les enfants verticalement */
-    justify-content: flex-end; /* Aligne tout en bas */
-    align-items: center; /* Centre horizontalement */
-    text-align: center; /* Centre le texte */
-
-    height: 100%; /* Hauteur complète des slides */
-    width: 500px; /* Largeur définie */
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: auto;
     margin-top: 30px;
-
     img {
-        max-height: 150px; /* Assure une hauteur uniforme pour les logos */
+        max-height: 120px; /* Assure une hauteur uniforme pour les logos */
         width:auto;
         object-fit: contain; /* Garde les proportions des images */
         margin-bottom: 10px; /* Espacement entre le logo et le texte */
