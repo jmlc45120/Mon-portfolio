@@ -17,14 +17,13 @@ get_header();
         <section class="hero">
         <div class="présentation">
             <h2>Jean-Michel Le Couviour<br>Développeur Web WordPress</h2>
-            <p>Mon parcours de formation s'est toujours orienté vers le technologique. <br>J'ai d'abord acquis une solide expérience dans l'informatique industrielle et <br>la
-            maitrise de languages avancés comme le C++. <br>Aujourd'hui, passionné par mon métier de développeur,il me permet de créer <br>des expériences numériques uniques,
-            au travers de sites fonctionnels et esthetiques.</p>
+            <p>Mon parcours de formation s'est toujours orienté vers le technologique.J'ai d'abord acquis une solide expérience dans l'informatique industrielle et la
+            maitrise de languages avancés comme le C++.Aujourd'hui, en tant que développeur passionné, je mets mes compétences au service de la création d'expériences numériques uniques, alliant fonctionnalité et esthétique.</p>
         </div>
     </section>
     <section class="compétences">
         <h2>Mes champs de compétences</h2>
-        <p> De la passion naissent la curiosité et le besoin continuel d'explorer ...<br> Le monde du développement web est en continuelle mutation, en évolution perpétuelle.<br> Veiller aux évolutions technologiques, enrichir continuellement ses connaissances<br>et explorer de nouvelles perspectives définissent l'essence même du développeur.</p>
+        <p> De la passion naissent la curiosité et le besoin continuel d'explorer ...<br> Le monde du développement web est en continuelle mutation, en évolution perpétuelle.<br> Veiller aux évolutions technologiques, enrichir continuellement ses connaissances et explorer de nouvelles perspectives définissent l'essence même du développeur.</p>
         <div class="swiper-container">
     <div class="swiper-wrapper">
         <?php
@@ -64,10 +63,10 @@ get_header();
     <section class="services">
         <div class="descript_services">
             <h2>Mes offres de services</h2>
-            <p>Développement de sites web : Création de sites vitrine, e-commerce.</p>
-            <p>Personnalisation WordPress : Thèmes et plugins sur mesure.</p>
-            <p>Optimisation de performance : Accélérer les temps de chargement.</p>
-            <p>Intégration responsive : Sites adaptés à tous les écrans.</p>
+            <p><span class="underline">Développement de sites web</span> : Création de sites vitrine, e-commerce.</p>
+            <p><span class="underline">Personnalisation WordPress</span> : Thèmes et plugins sur mesure.</p>
+            <p><span class="underline">Optimisation de performance</span> : Accélérer les temps de chargement.</p>
+            <p><span class="underline">Intégration responsive</span> : Sites adaptés à tous les écrans.</p>
         </div>
         <button class="btn_modale"> ME CONTACTER</button>
     </section>

@@ -47,10 +47,10 @@
 /* Contenu de la modale */
 .modal-content {
     display: flex;
-    flex-direction: column; /* Colonne pour aligner les champs */
-    align-items: center; /* Centre horizontalement les champs */
+    flex-direction: column;
+    align-items: center;
     background: #09034b;
-    border: 2px solid #ffffff; /* Contour blanc */
+    border: 2px solid #ffffff;
     padding: 1.5rem;
     border-radius: 8px;
     max-width: 400px;
@@ -89,26 +89,26 @@
 
     /* Champs du formulaire */
     .wpcf7-form-control {
-        width: 100%; /* Les champs occupent toute la largeur de la modale */
-        max-width: 350px; /* Limite maximale de largeur */
-        padding: 0.5rem; /* Espacement interne */
-        border: none; /* Supprime les bordures par défaut */
+        width: 100%;
+        max-width: 350px;
+        padding: 0.5rem;
+        border: none;
         border-radius: 4px; /* Coins arrondis */
         font-size: 16px;
-        box-sizing: border-box; /* Assure une gestion cohérente des dimensions */
+        box-sizing: border-box;
     }
 
     .wpcf7-textarea {
-        resize: none; /* Désactive le redimensionnement */
-        height: 120px; /* Hauteur spécifique pour le textarea */
+        resize: none;
+        height: 120px;
     }
 
     /* Centrer le bouton Envoyer */
     .wpcf7-form p {
-        display: flex; /* Active Flexbox */
-        justify-content: center; /* Centre horizontalement */
-        align-items: center; /* Centre verticalement */
-        gap: 0.5rem; /* Espacement entre le bouton et autres éléments */
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     /* Bouton Envoyer */

@@ -1,6 +1,7 @@
 .titre-accueil{
     display: flex;
     justify-content:center;
+    border-top: 1px solid $accent-color-hover;
 }
 .présentation{
     display: flex;
@@ -30,25 +31,25 @@
     width: auto;
     margin-top: 30px;
     img {
-        max-height: 120px; /* Assure une hauteur uniforme pour les logos */
+        max-height: 120px;
         width:auto;
-        object-fit: contain; /* Garde les proportions des images */
-        margin-bottom: 10px; /* Espacement entre le logo et le texte */
+        object-fit: contain;
+        margin-bottom: 10px;
     }
 
     p {
-        margin: 0; /* Enlève les marges par défaut */
+        margin: 0;
         font-size: 20px;
-        line-height: 1.2; /* Améliore la lisibilité */
+        line-height: 1.2;
     }
 }
 .swiper-button-next,
 .swiper-button-prev {
-    display: none !important; /* Cache les flèches */
+    display: none !important;
 }
 .swiper-slide.swiper-slide-active {
-    opacity: 1; /* Le slide actif est entièrement visible */
-    transform: scale(1); /* Zoom sur le slide actif */
+    opacity: 1;
+    transform: scale(1.4);
 }
 .ma_photo{
     display:flex;

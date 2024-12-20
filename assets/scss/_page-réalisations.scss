@@ -1,5 +1,6 @@
 .projects-page {
     padding: 0rem;
+    border-top: 1px solid $accent-color-hover;
 
     h1 {
         text-align: center;
@@ -8,25 +9,25 @@
     .projects-list {
         display: flex;
         flex-direction: column;
-        gap: 3rem; /* Espacement entre les projets */
+        gap: 3rem;
        
     }
 
     .project {
-        display: flex; /* Aligner l'image et les détails horizontalement */
-        gap: 1rem; /* Espacement entre l'image et les détails */
-        border: 1px solid #0b0a2f; /* Bordure pour le conteneur */
-        border-radius: 8px; /* Coins arrondis */
-        padding: 1rem; /* Espacement interne */
-        background-color: #06042c; /* Fond sombre */
-        color: #e0e0e0; /* Texte clair */
-        opacity: 0; /* Caché par défaut */
-        transform: translateY(250px); /* Déplacement vers le bas */
-        transition: opacity 5s ease, transform 2s ease, border-color 1.0s ease;; /* Transition fluide */
+        display: flex;
+        gap: 1rem;
+        border: 1px solid #0b0a2f;
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #06042c;
+        color: #e0e0e0;
+        opacity: 0;
+        transform: translateY(250px);
+        transition: opacity 5s ease, transform 2s ease, border-color 1.0s ease;
 
         &.visible{
-            opacity: 1; /* Devient visible */
-            transform: translateY(0); /* Remonte à sa position initiale */
+            opacity: 1;
+            transform: translateY(0);
         }
         &:hover{
             border-color:$accent-color-hover;
@@ -36,68 +37,64 @@
             display:flex;
             align-items: center;
             gap: 2rem;
-            @media (max-width: 768px) {
-                flex-direction: column;
-            }
+            
         }
 
         .project-image {
-           display:flex;
-           align-content:center;
-            
+            display:flex;
+            align-content:center;
             img {
-                width: 520px; /* Largeur fixe pour l'image */
-                height: auto; /* Conserver les proportions */
-                border-radius: 8px; /* Coins arrondis */
+                width: 520px;
+                height: auto;
+                border-radius: 8px;
             }
         }
     
 
         .project-details {
             display: flex;
-            flex-direction: column; /* Empiler les éléments verticalement */
+            flex-direction: column;
             justify-content: center;
-            // flex: 1; /* Occuper tout l'espace disponible à droite */
-            gap: 1rem; /* Espacement entre la description et les technologies */
+            gap: 1rem;
 
             .project-description {
                 
-                line-height: 1.5; /* Interligne agréable pour la lecture */
+                line-height: 1.5;
                 p{
-                    font-size: 1.1rem; /* Taille de police normale */
+                    font-size: 1.1rem;
                     margin:0;
                 }
             }
 
             .technologies {
                 h3 {
-                    font-size: 1.2rem; /* Taille du titre des technologies */
-                    margin-bottom: 0.2rem; /* Espacement sous le titre */
+                    font-size: 1.2rem;
+                    margin-bottom: 0.2rem;
                 }
 
                 /* Liste des technologies */
                 .technology-list {
-                    display: flex; /* Aligner les technologies horizontalement */
-                    gap: 1rem; /* Espacement entre les logos */
-                    flex-wrap: wrap; /* Retour à la ligne si nécessaire */
+                    display: flex;
+                    gap: 1rem;
+                    flex-wrap: wrap;
 
                     .technology {
                         display: flex; /* Aligner logo et texte */
                         align-items: center;
                         gap: 0.5rem; /* Espacement entre le logo et le texte */
-                        background-color: #292929; /* Fond sombre pour chaque technologie */
-                        border-radius: 4px; /* Coins arrondis */
-                        padding: 0.5rem; /* Espacement interne */
-                        color: #fff; /* Couleur du texte */
+                        background-color: #292929;
+                        border-radius: 4px;
+                        padding: 0.5rem;
+                        color: #fff;
                         transition: transform 0.5s ease;
 
                         img.tech-logo {
-                            width: 25px; /* Taille du logo */
-                            height: auto; /* Conserver les proportions */
+                            width: 25px;
+                            height: auto;
                         }
 
                         span {
-                            font-size: 0.8rem; /* Taille de la police */
+                            font-size: 0.8rem;
                         }
                         &:hover{
                             transform: scale(1.1);
@@ -105,9 +102,6 @@
                     }
                 }
             }
-        }
-        @media (max-width: 768px) {
-            flex-direction: column;
         }
     }
 }
@@ -117,28 +111,33 @@
     flex: 1 1 100%;
 
 }
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .project {
         flex-direction: column;
     }
+
+article h1{
+    text-align: center;
 }
+article h2{
+    text-align: center;
+    max-width:1200px!important;
+    width:100%;
+}
+.project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.project-image {
+    width: 100%;
+    margin-bottom: 20px;
 
-@media (max-width: 900px) {
-    .project-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
+    img {
+        width: 100%!important;
+        height: auto;
+        object-fit: contain;
     }
-
-    .project-image {
-        width: 100%;
-        margin-bottom: 20px;
-
-        img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-    }
+}
 }

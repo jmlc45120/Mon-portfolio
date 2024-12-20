@@ -1,28 +1,28 @@
 /* Loader global */
 .loader {
-    display: none; /* Masqué par défaut */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 9999;
     justify-content: center;
     align-items: center;
 }
 
 .loader.active {
-    display: flex; /* Affiche le loader lorsqu'il est actif */
+    display: flex;
 }
 
 .spinner {
     width: 100px;
     height: 100px;
-    border: 5px solid #ffffff; /* Bordure blanche */
-    border-top: 5px solid #09034b; /* Bordure supérieure colorée */
-    border-radius: 50%; /* Cercle parfait */
-    animation: spin 1s linear infinite; /* Animation de rotation */
+    border: 5px solid #ffffff;
+    border-top: 5px solid #09034b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
 /* Animation de rotation */
